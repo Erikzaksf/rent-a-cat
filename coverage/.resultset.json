@@ -534,10 +534,26 @@
         null,
         null
       ],
-      "/home/funkinfresh/coding/solo-projects/rent-a-cat/spec/factories/users.rb": [
+      "/home/funkinfresh/coding/solo-projects/rent-a-cat/spec/factories.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
         null,
         null
       ],
@@ -553,6 +569,8 @@
         null,
         1,
         null,
+        1,
+        null,
         null
       ],
       "/home/funkinfresh/coding/solo-projects/rent-a-cat/app/models/application_record.rb": [
@@ -563,8 +581,15 @@
       "/home/funkinfresh/coding/solo-projects/rent-a-cat/app/helpers/application_helper.rb": [
         1,
         null
+      ],
+      "/home/funkinfresh/coding/solo-projects/rent-a-cat/app/models/comment.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
       ]
     },
-    "timestamp": 1512157054
+    "timestamp": 1512158948
   }
 }
