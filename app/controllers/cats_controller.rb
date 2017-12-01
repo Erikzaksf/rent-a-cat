@@ -9,17 +9,17 @@ class CatsController < ApplicationController
   end
 
   def new
-    authorize
-    @cat.user.admin === true
+    # authorize
+    # @cat.user.admin === true
     @cat = Cat.new
   end
 
   def create
     @cat = Cat.new(cat_params)
-    @cat.user.admin === true
+
     if @cat.save
       flash[:notice] = "Cat posted successfully!"
-      redirect_to cat_path(@cat)
+      redirect_to cats_path
     else
       flash[:alert] = "Something went wrong!"
       render :new
@@ -38,7 +38,7 @@ class CatsController < ApplicationController
 
   def update
     @cat = Cat.find(params[:id])
-    if @cat.user.admin === true
+    if @cat.user == current_user
       if @cat.update(cat_params)
         flash[:notice] = "Cat updated successfully!"
         redirect_to cat_path(@cat)

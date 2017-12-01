@@ -1,8 +1,12 @@
 <h1>Cat List</h1>
-<% if @cats.length > 1 %>
-  <%= %>
+<% if @cats.any? %>
+  <% @cats.each do |cat| %>
+    <div class="cat-name">
+      <h3><%= link_to cat.name, cat_path(cat) %></h3>
+    </div>
+  <% end %>
 <% else %>
   <p>sorry, there are no cats yet</p>
-<% end %>
+  <% end %>
  <%= link_to "Add an cat", new_cat_path %>
  <!-- add admin verification before showing link -->
