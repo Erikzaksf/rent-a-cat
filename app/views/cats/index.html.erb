@@ -1,0 +1,8 @@
+<h1>Cat List</h1>
+<% if @cats.length > 1 %>
+  <%= %>
+<% else %>
+  <p>sorry, there are no cats yet</p>
+<% end %>
+ <%= link_to "Add an cat", new_cat_path %>
+ <!-- add admin verification before showing link -->
