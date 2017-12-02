@@ -1,8 +1,8 @@
 <% if current_user %>
   <%= current_user.user_name %>
-  <h5><%= link_to "Sign out", '/signout' %>sign out</h5>
+  <h5><%= link_to "Sign out", destroy_user_session_path %></h5>
 <% else %>
-  <h5><%= link_to "Sign in", '/signin' %> </h5>
+  <h5><%= link_to "Sign in", 'ahahahaha' %> </h5>
 <% end %>
 
 <h1>Cat List</h1>
