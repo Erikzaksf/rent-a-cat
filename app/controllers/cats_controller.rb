@@ -28,7 +28,7 @@ class CatsController < ApplicationController
 
   def edit
     @cat = Cat.find(params[:id])
-    if @cat.user == current_user
+    if user.admin?
       render :edit
     else
       flash[:alert] = "You aren't authorized to access that."
@@ -38,7 +38,7 @@ class CatsController < ApplicationController
 
   def update
     @cat = Cat.find(params[:id])
-    if @cat.user == current_user
+    if user.admin?
       if @cat.update(cat_params)
         flash[:notice] = "Cat updated successfully!"
         redirect_to cat_path(@cat)
@@ -54,7 +54,7 @@ class CatsController < ApplicationController
 
   def destroy
     @cat = Cat.find(params[:id])
-    if @cat.user.admin === true
+    if user.admin?
       @cat.comments.each do |comment|
         comment.destroy
       end

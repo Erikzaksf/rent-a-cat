@@ -1,0 +1,18 @@
+
+<h5><%= link_to "Back to Cats", cats_path %></h5>
+
+<h2><%= @cat.name %></h2>
+<br>
+<h3>About<%= @cat.name %></h3>
+<p><%= @cat.about %></p>
+<br>
+<h3><%= @cat.name %>'s Traits</h3>
+<p><%= @cat.traits %></p>
+<br>
+<h3><%= @cat.name %>'s Price per weekend:</h3>
+<p>$<%= @cat.price %></p>
+
+<% if current_user.admin? %>
+  <%= link_to "Edit", edit_cat_path(@cat) %> |
+
+<% end %>

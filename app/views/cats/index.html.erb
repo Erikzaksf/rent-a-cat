@@ -1,3 +1,10 @@
+<% if current_user %>
+  <%= current_user.user_name %>
+  <h5><%= link_to "Sign out", '/signout' %>sign out</h5>
+<% else %>
+  <h5><%= link_to "Sign in", '/signin' %> </h5>
+<% end %>
+
 <h1>Cat List</h1>
 <% if @cats.any? %>
   <% @cats.each do |cat| %>
@@ -7,6 +14,10 @@
   <% end %>
 <% else %>
   <p>sorry, there are no cats yet</p>
-  <% end %>
- <%= link_to "Add an cat", new_cat_path %>
+<% end %>
+<% if current_user.admin? %>
+|  <%= link_to "Add an cat", new_cat_path %>
+<% end %>
+
+
  <!-- add admin verification before showing link -->
