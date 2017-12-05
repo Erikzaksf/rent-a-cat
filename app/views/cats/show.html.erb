@@ -12,7 +12,6 @@
 <h3><%= @cat.name %>'s Price per weekend:</h3>
 <p>$<%= @cat.price %></p>
 
-<% if current_user.admin? %>
-  <%= link_to "Edit", edit_cat_path(@cat) %> |
-
+<% if current_user.try(:admin?) %>
+  <%= link_to "Edit", edit_cat %> |
 <% end %>

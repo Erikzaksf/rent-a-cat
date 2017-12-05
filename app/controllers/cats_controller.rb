@@ -28,7 +28,7 @@ class CatsController < ApplicationController
 
   def edit
     @cat = Cat.find(params[:id])
-    if user.admin?
+    if current_user.try(:admin?)
       render :edit
     else
       flash[:alert] = "You aren't authorized to access that."

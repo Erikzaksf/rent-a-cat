@@ -15,7 +15,7 @@
 <% else %>
   <p>sorry, there are no cats yet</p>
 <% end %>
-<% if current_user.admin? %>
+<% if current_user.try(:admin?) %>
 |  <%= link_to "Add an cat", new_cat_path %>
 <% end %>
 
