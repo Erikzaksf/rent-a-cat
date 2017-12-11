@@ -13,5 +13,5 @@
 <p>$<%= @cat.price %></p>
 
 <% if current_user.try(:admin?) %>
-  <%= link_to "Edit", edit_cat %> |
+  <%= link_to "Edit", 'edit_cat' %> |
 <% end %>

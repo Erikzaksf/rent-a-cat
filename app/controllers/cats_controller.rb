@@ -9,8 +9,6 @@ class CatsController < ApplicationController
   end
 
   def new
-    # authorize
-    # @cat.user.admin === true
     @cat = Cat.new
   end
 
@@ -28,17 +26,12 @@ class CatsController < ApplicationController
 
   def edit
     @cat = Cat.find(params[:id])
-    if current_user.try(:admin?)
-      render :edit
-    else
-      flash[:alert] = "You aren't authorized to access that."
-      redirect_to cat_path(@cat)
-    end
+
   end
 
   def update
     @cat = Cat.find(params[:id])
-    if user.admin?
+
       if @cat.update(cat_params)
         flash[:notice] = "Cat updated successfully!"
         redirect_to cat_path(@cat)
@@ -46,10 +39,6 @@ class CatsController < ApplicationController
         flash[:alert] = "Something went wrong!"
         render :edit
       end
-    else
-      flash[:alert] = "You aren't authorized to do that."
-      redirect_to cat_path(@cat)
-    end
   end
 
   def destroy

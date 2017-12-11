@@ -2,7 +2,7 @@
   <%= current_user.user_name %>
   <h5><%= link_to "Sign out", destroy_user_session_path %></h5>
 <% else %>
-  <h5><%= link_to "Sign in", 'ahahahaha' %> </h5>
+  <h5><%= link_to "Sign in", 'users/sign_in' %> </h5>
 <% end %>
 
 <h1>Cat List</h1>
@@ -18,6 +18,3 @@
 <% if current_user.try(:admin?) %>
 |  <%= link_to "Add an cat", new_cat_path %>
 <% end %>
-
-
- <!-- add admin verification before showing link -->
