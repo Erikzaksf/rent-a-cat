@@ -1,6 +1,6 @@
 <% if current_user %>
   <%= current_user.user_name %>
-  <h5><%= link_to "Sign out", destroy_user_session_path %></h5>
+  <h5><%= link_to "Sign out", 'users/sign_out', method: :delete %></h5>
 <% else %>
   <h5><%= link_to "Sign in", 'users/sign_in' %> </h5>
 <% end %>
